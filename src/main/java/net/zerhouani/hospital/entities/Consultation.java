@@ -17,6 +17,6 @@ public class Consultation {
     private Date dateConsultation;
     private String rapport;
 
-    @OneToOne(mappedBy = "rendezVous")
+    @OneToOne
     private RendezVous rendezVous;
 }
