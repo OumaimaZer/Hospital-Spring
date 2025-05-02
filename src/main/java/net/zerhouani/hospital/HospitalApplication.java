@@ -60,9 +60,11 @@ public class HospitalApplication{
 			rendezVous.setStatus(StatusRDV.PENDING);
 			rendezVous.setMedecin(medecin);
 			rendezVous.setPatient(patient);
-			hospitalService.save(rendezVous);
+			RendezVous saveRDV = hospitalService.save(rendezVous);
+			System.out.println("ID : "+saveRDV.getId() );
 
-			RendezVous rendezVous1=rendezVousRepository.findById(1L).orElse(null);
+			//RendezVous rendezVous1=rendezVousRepository.findById(1L).orElse(null);
+			RendezVous rendezVous1=rendezVousRepository.findAll().get(0);
 			Consultation consultation=new Consultation();
 			consultation.setDateConsultation(new Date());
 			consultation.setRendezVous(rendezVous1);
