@@ -1,3 +1,16 @@
+# Rapport "Use case JPA, Hibernate Spring Data, One To Many, One To One"
+La vidéo offre une démonstration pratique de la mise en œuvre des relations One-to-One et One-to-Many en utilisant JPA, Hibernate et Spring Data JPA.
+
+### Contenu de la vidéo :
+Cette vidéo didactique guide les développeurs à travers la création d'une application Java intégrant JPA et Hibernate pour gérer des relations entre entités. Elle couvre les étapes suivantes :
+Configuration du projet : Mise en place d'un projet Spring Boot avec les dépendances nécessaires pour JPA et Hibernate.
+Définition des entités : Création des classes d'entités représentant les tables de la base de données, avec annotations pour spécifier les relations One-to-One et One-to-Many.
+Création des repositories : Utilisation de Spring Data JPA pour créer des interfaces de repository permettant les opérations CRUD sur les entités.
+Implémentation des services : Développement des services pour gérer la logique métier, incluant la gestion des relations entre entités.
+Tests et démonstration : Exécution de l'application pour démontrer le fonctionnement des relations et la persistance des données.
+
+### Captures d'écrans :
+
 ![image](https://github.com/user-attachments/assets/d9ccfe39-d8ad-48ba-8ef8-9ece814b0478)
 
 ![image](https://github.com/user-attachments/assets/7ada4d0e-477b-442d-96f3-9434281fdf32)
