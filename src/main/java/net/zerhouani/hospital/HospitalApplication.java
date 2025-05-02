@@ -1,9 +1,7 @@
 package net.zerhouani.hospital;
 
-import net.zerhouani.hospital.entities.Medecin;
-import net.zerhouani.hospital.entities.Patient;
-import net.zerhouani.hospital.entities.RendezVous;
-import net.zerhouani.hospital.entities.StatusRDV;
+import net.zerhouani.hospital.entities.*;
+import net.zerhouani.hospital.repositories.ConsultationRepository;
 import net.zerhouani.hospital.repositories.MedecinRepository;
 import net.zerhouani.hospital.repositories.PatientRepository;
 import net.zerhouani.hospital.repositories.RendezVousRepository;
@@ -27,7 +25,8 @@ public class HospitalApplication{
 	CommandLineRunner start(
 			PatientRepository patientRepository,
 			MedecinRepository medecinRepository,
-			RendezVousRepository rendezVousRepository){
+			RendezVousRepository rendezVousRepository,
+			ConsultationRepository consultationRepository){
 		return args -> {
 			//patientRepository.save(new Patient(null,"Hassan", new Date(), false, null));
 			Stream.of("Mohammed", "Hassan", "Najat")
@@ -58,6 +57,13 @@ public class HospitalApplication{
 			rendezVous.setMedecin(medecin);
 			rendezVous.setPatient(patient);
 			rendezVousRepository.save(rendezVous);
+
+			RendezVous rendezVous1=rendezVousRepository.findById(1L).orElse(null);
+			Consultation consultation=new Consultation();
+			consultation.setDateConsultation(new Date());
+			consultation.setRendezVous(rendezVous1);
+			consultation.setRapport("Rapport de la consultation...");
+			consultationRepository.save(consultation);
 		};
 	}
 
