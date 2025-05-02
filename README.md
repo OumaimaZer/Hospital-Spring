@@ -1,15 +1,15 @@
-# Rapport "Use case JPA, Hibernate Spring Data, One To Many, One To One"
+# Rapport "Use case JPA, Hibernate Spring Data, One To Many, One To One", réalisée par Mr.Mohamed Youssfi
 La vidéo offre une démonstration pratique de la mise en œuvre des relations One-to-One et One-to-Many en utilisant JPA, Hibernate et Spring Data JPA dans une application de Consultation médicale. Nous avons utilisé plusieures entités, dont : Patient, Médecin, RendezVous et Consultation. Cette application va permettre de suivre un rendez-vous qu'un patient peut prendre chez un médecin ainsi sa consultation.
 
 ### Lien : https://www.youtube.com/watch?v=Kfv_7m8INlU
 
 ### Contenu de la vidéo :
-Cette vidéo didactique guide les développeurs à travers la création d'une application Java intégrant JPA et Hibernate pour gérer des relations entre entités. Elle couvre les étapes suivantes :
-Configuration du projet : Mise en place d'un projet Spring Boot avec les dépendances nécessaires pour JPA et Hibernate.
-Définition des entités : Création des classes d'entités représentant les tables de la base de données, avec annotations pour spécifier les relations One-to-One et One-to-Many.
-Création des repositories : Utilisation de Spring Data JPA pour créer des interfaces de repository permettant les opérations CRUD sur les entités.
-Implémentation des services : Développement des services pour gérer la logique métier, incluant la gestion des relations entre entités.
-Tests et démonstration : Exécution de l'application pour démontrer le fonctionnement des relations et la persistance des données.
+Cette vidéo didactique m'a guidé à travers la création d'une application de consultation médicale avec Java intégrant JPA et Hibernate pour gérer des relations entre entités. Elle couvre les étapes suivantes :
+  -  Configuration du projet : Mise en place d'un projet Spring Boot avec les dépendances nécessaires pour JPA et Hibernate.
+  -  Définition des entités : Création des classes d'entités représentant les tables de la base de données, avec annotations pour spécifier les relations One-to-One et One-to-Many.
+  -  Création des repositories : Utilisation de Spring Data JPA pour créer des interfaces de repository permettant les opérations CRUD sur les entités.
+  -  Implémentation des services : Développement des services pour gérer la logique métier, incluant la gestion des relations entre entités.
+  -  Tests et démonstration : Exécution de l'application pour démontrer le fonctionnement des relations et la persistance des données.
 
 ### Captures d'écrans :
 #### Réalisation :
