@@ -5,6 +5,7 @@ import net.zerhouani.hospital.repositories.ConsultationRepository;
 import net.zerhouani.hospital.repositories.MedecinRepository;
 import net.zerhouani.hospital.repositories.PatientRepository;
 import net.zerhouani.hospital.repositories.RendezVousRepository;
+import net.zerhouani.hospital.service.IHospitalService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,11 +23,14 @@ public class HospitalApplication{
 	}
 
 	@Bean
-	CommandLineRunner start(
+	/** CommandLineRunner start(
 			PatientRepository patientRepository,
 			MedecinRepository medecinRepository,
 			RendezVousRepository rendezVousRepository,
-			ConsultationRepository consultationRepository){
+			ConsultationRepository consultationRepository){ **/
+	CommandLineRunner start(IHospitalService hospitalService, PatientRepository patientRepository,
+							MedecinRepository medecinRepository, RendezVousRepository rendezVousRepository,
+							ConsultationRepository consultationRepository) {
 		return args -> {
 			//patientRepository.save(new Patient(null,"Hassan", new Date(), false, null));
 			Stream.of("Mohammed", "Hassan", "Najat")
@@ -35,7 +39,7 @@ public class HospitalApplication{
 						patient.setNom(name);
 						patient.setDateNaissance(new Date());
 						patient.setMalade(false);
-						patientRepository.save(patient);
+						hospitalService.save(patient);
 					});
 			Stream.of("Aymane", "Hanane", "Yasmine")
 					.forEach(name -> {
@@ -43,7 +47,7 @@ public class HospitalApplication{
 						medecin.setNom(name);
 						medecin.setEmail(name+"@gmail.com");
 						medecin.setSpecialite(Math.random()>0.5?"Cardio":"Dentiste");
-						medecinRepository.save(medecin);
+						hospitalService.save(medecin);
 					});
 
 			Patient patient=patientRepository.findById(1L).orElse(null);
@@ -56,14 +60,14 @@ public class HospitalApplication{
 			rendezVous.setStatus(StatusRDV.PENDING);
 			rendezVous.setMedecin(medecin);
 			rendezVous.setPatient(patient);
-			rendezVousRepository.save(rendezVous);
+			hospitalService.save(rendezVous);
 
 			RendezVous rendezVous1=rendezVousRepository.findById(1L).orElse(null);
 			Consultation consultation=new Consultation();
 			consultation.setDateConsultation(new Date());
 			consultation.setRendezVous(rendezVous1);
 			consultation.setRapport("Rapport de la consultation...");
-			consultationRepository.save(consultation);
+			hospitalService.save(consultation);
 		};
 	}
 
